@@ -64,7 +64,7 @@ const FAQs = () => {
 
   return (
     <Container maxWidth="xxl" disableGutters sx={{ py: 4, mt: 4 }}>
-      <Container maxWidth="md" disableGutters>
+      <Container maxWidth="lg">
         <Grid container spacing={6}>
           <Grid item xs={12}>
             <Typography variant="h4" sx={{ m: 2 }}>

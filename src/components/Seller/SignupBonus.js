@@ -34,8 +34,9 @@ const SellerSignIn = () => {
           Continue
         </Button>
       </Stack>
-
-      <Divider>or</Divider>
+      <Stack sx={{ px: 2 }}>
+        <Divider>or</Divider>
+      </Stack>
       <Stack spacing={1} sx={{ mt: 1 }}>
         <ButtonComponent
           text="Continue with Google"

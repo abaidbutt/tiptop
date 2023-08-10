@@ -38,7 +38,7 @@ const mobileworks = {
 
 const Property = () => {
   return (
-    <Container sx={{ py: { md: 5, xs: 3 } }} maxWidth="md">
+    <Container sx={{ py: { md: 5, xs: 3 } }} maxWidth="md" disableGutters>
       <Container maxWidth="sm" sx={{ my: 5, textAlign: "center" }}></Container>
       <ContentComponent works={works} img={"design_5"} />
       <ContentComponent works={mobileworks} reverse={true} img="design_7" />
@@ -49,7 +49,7 @@ function ContentComponent({ works, reverse, img }) {
   return (
     <Grid
       container
-      spacing={2}
+      spacing={4}
       direction={reverse ? "row-reverse" : "row"}
       flexWrap="wrap"
       sx={{ alignItems: "flex-start" }}
@@ -63,6 +63,7 @@ function ContentComponent({ works, reverse, img }) {
         data-aos-duration={4000 * 1}
         data-aos-easing="linear"
         data-aos-offset="300"
+        sx={{ px: 3 }}
       >
         <ResponsiveImage src={`/assets/buy/${img}.jpg`} alt={img} />
       </Grid>
@@ -75,18 +76,19 @@ function ContentComponent({ works, reverse, img }) {
             fontWeight: 700,
             whiteSpace: "pre-line",
             overflowWrap: "break-word",
+            fontSize: "1.75rem",
           }}
         >
           {works.name}
         </Typography>
         <Stack
           justifyContent={"center"}
-          sx={{ maxWidth: { md: 380 } }}
+          sx={{ maxWidth: { md: 420 } }}
           spacing={1}
         >
           {works?.description?.map((item, index) => (
             <Stack alignItems={"center"} spacing={1} key={index}>
-              <Typography variant="subtitle1">{item}</Typography>
+              <Typography variant="subtitle1" >{item}</Typography>
             </Stack>
           ))}
         </Stack>

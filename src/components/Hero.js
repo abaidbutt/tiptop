@@ -12,7 +12,7 @@ const Hero = () => {
   const [file, setFile] = React.useState();
   function fetchData() {}
   return (
-    <Box>
+    <Container disableGutters>
       <Box
         sx={{
           pt: 8,
@@ -71,15 +71,14 @@ const Hero = () => {
               placeholder="City or Zip Code"
               fullWidth
               variant="outlined"
-              type="file"
-              onChange={(e) => setFile(e.target.file)}
+              onChange={(e) => setFile(e.target.value)}
               InputLabelProps={{
                 // style: { color: '#43DCFF' }
                 style: { color: "#000" },
               }}
               size="medium"
               sx={{
-                background: "#fff",
+                background: "#F2F2F2",
 
                 border: "none",
                 "& .MuiOutlinedInput-root": {
@@ -87,6 +86,7 @@ const Hero = () => {
                     borderRadius: 2,
                     borderTopRightRadius: 0,
                     borderBottomRightRadius: 0,
+                    border: "1px solid #595959",
                   },
                 },
                 "& .MuiOutlinedInput-input": {
@@ -105,8 +105,14 @@ const Hero = () => {
               variant="contained"
               sx={{
                 borderRadius: 2,
-                borderTopLeftRadius: 0,
-                borderBottomLeftRadius: 0,
+                // borderTopLeftRadius: 0,
+                // borderBottomLeftRadius: 0,
+                zIndex: 1,
+                ml: -2,
+                py: 5 / 2.1,
+                mt: -1 / 2,
+                px:3,
+              
               }}
               size="large"
               color="primary"
@@ -116,7 +122,7 @@ const Hero = () => {
           </Stack>
         </Container>
       </Box>
-    </Box>
+    </Container>
   );
 };
 

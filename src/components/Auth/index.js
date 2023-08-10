@@ -5,7 +5,7 @@ import {
   ToggleButtonGroup,
   Button,
   Stack,
-  Typography,
+  Box,
 } from "@mui/material";
 import { grey } from "@mui/material/colors";
 
@@ -69,38 +69,34 @@ const Auth = () => {
   }, [location]);
 
   const handleChange = (event, newauth) => {
-    if (
-      newauth === "signin" &&
-      (state.role === "buyer" || state.role === "agent")
-    ) {
+    if (newauth === "signin" && state.role === "buyer") {
       navigate("/auth/signin");
-    } else if (
-      newauth === "signup" &&
-      (state.role === "buyer" || state.role === "agent")
-    ) {
+    } else if (newauth === "signup" && state.role === "buyer") {
       navigate("/auth/signup");
     } else if (newauth === "signup" && state.role === "seller") {
       navigate("/auth/seller/signup");
     } else if (newauth === "signin" && state.role === "seller") {
       navigate("/auth/seller/signin");
+    } else if (newauth === "signup" && state.role === "agent") {
+      navigate("/auth/agent/signup");
+    } else if (newauth === "signin" && state.role === "agent") {
+      navigate("/auth/agent/signin");
     }
     dispatch({ type: "AUTH", payload: { current: newauth } });
   };
   const handleRole = (event, newrole) => {
-    if (
-      state.current === "signin" &&
-      (newrole === "buyer" || newrole === "agent")
-    ) {
+    if (state.current === "signin" && newrole === "buyer") {
       navigate("/auth/signin");
-    } else if (
-      state.current === "signup" &&
-      (newrole === "buyer" || newrole === "agent")
-    ) {
+    } else if (state.current === "signup" && newrole === "buyer") {
       navigate("/auth/signup");
     } else if (state.current === "signup" && newrole === "seller") {
       navigate("/auth/seller/signup");
     } else if (state.current === "signin" && newrole === "seller") {
       navigate("/auth/seller/signin");
+    } else if (state.current === "signup" && newrole === "agent") {
+      navigate("/auth/agent/signup");
+    } else if (state.current === "signin" && newrole === "agent") {
+      navigate("/auth/agent/signin");
     }
     dispatch({ type: "AUTH", payload: { role: newrole } });
   };
@@ -112,12 +108,12 @@ const Auth = () => {
       }}
     >
       <Container maxWidth="xs" sx={{ textAlign: "center" }}>
-        {state.current === "signin" && (
+        {/* {state.current === "signin" && (
           <Typography variant="h5" gutterBottom fontWeight="bold">
             Welcome to TipTop
           </Typography>
-        )}
-        <Stack alignItems="center" spacing={1}>
+        )} */}
+        <Stack alignItems="center" spacing={1} sx={{ py: 2 }}>
           <StyledToggleButtonGroup
             color="primary"
             value={state.current}
@@ -130,7 +126,7 @@ const Auth = () => {
           </StyledToggleButtonGroup>
         </Stack>
         {state.current === "signup" && location.pathname !== "/auth/verify" && (
-          <Stack alignItems="center" spacing={1}>
+          <Stack alignItems="center" spacing={1} sx={{ py: 2 }}>
             <StyledToggleButtonGroup
               color="primary"
               value={state.role}
@@ -144,7 +140,9 @@ const Auth = () => {
             </StyledToggleButtonGroup>
           </Stack>
         )}
-        <Outlet />
+        <Box sx={{mt:2}}>
+          <Outlet />
+        </Box>
       </Container>
     </Container>
   );

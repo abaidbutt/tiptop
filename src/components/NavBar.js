@@ -17,7 +17,6 @@ import {
   ListItem,
   ListItemButton,
   Drawer,
-  Divider,
   ListItemText,
   Collapse,
   ListItemIcon,
@@ -103,7 +102,7 @@ function NavBar(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [anchorMenus, setAnchorMenus] = React.useState(null);
   const [open, setOpen] = React.useState(false);
-
+  console.log(location.pathname?.startsWith("/auth"));
   const handleClick = () => {
     setOpen(!open);
   };
@@ -141,7 +140,7 @@ function NavBar(props) {
   const drawer = (
     <div>
       <Toolbar />
-      <Divider />
+
       <List>
         {pages.map((page, index) => (
           <React.Fragment key={index}>
@@ -178,11 +177,21 @@ function NavBar(props) {
                           sx={{
                             "&:hover": { border: "2px solid #09FFF9" },
                             border: "2px solid #7F7F7F",
+                            textAlign: "left",
                             // p: 0,
                             // m: 0,
                           }}
                         >
-                          <ListItemText primary={child.name} component="span" />
+                          <ListItemText
+                            sx={{
+                              textAlign: "left",
+                              "& .MuiMenuItem-root": {
+                                textAlign: "left",
+                              },
+                            }}
+                            primary={child.name}
+                            component="span"
+                          />
                         </ListItemButton>
                       </ListItem>
                     ))}
@@ -289,43 +298,44 @@ function NavBar(props) {
             <LogoIcon screen={false} />
 
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {pages.map((page) => (
-                <Box key={page.name}>
-                  <Button
-                    size="large"
-                    sx={{
-                      my: 2,
-                      display: "block",
-                      borderRadius: 0,
-                      borderBottom:
-                        page.route === location.pathname
-                          ? "2px solid aqua"
-                          : "2px solid transparent",
+              {!location.pathname?.startsWith("/auth") &&
+                pages.map((page) => (
+                  <Box key={page.name}>
+                    <Button
+                      size="large"
+                      sx={{
+                        my: 2,
+                        display: "block",
+                        borderRadius: 0,
+                        borderBottom:
+                          page.route === location.pathname
+                            ? "2px solid aqua"
+                            : "2px solid transparent",
 
-                      transition: "border-bottom 0.3s ease",
-                      "&:hover": {
-                        borderBottom: "2px solid aqua",
-                      },
-                    }}
-                    onClick={(e) => {
-                      if (page.children?.length) {
-                        handleOpen(e);
-                      } else {
-                        navigate(page.route);
-                      }
-                    }}
-                    onMouseEnter={(e) => {
-                      if (page.children?.length) {
-                        handleOpen(e);
-                      }
-                    }}
-                    // onMouseLeave={() => page.children?.length && handleClose()}
-                    color="secondary"
-                  >
-                    {page.name}
-                  </Button>
-                </Box>
-              ))}
+                        transition: "border-bottom 0.3s ease",
+                        "&:hover": {
+                          borderBottom: "2px solid aqua",
+                        },
+                      }}
+                      onClick={(e) => {
+                        if (page.children?.length) {
+                          handleOpen(e);
+                        } else {
+                          navigate(page.route);
+                        }
+                      }}
+                      onMouseEnter={(e) => {
+                        if (page.children?.length) {
+                          handleOpen(e);
+                        }
+                      }}
+                      // onMouseLeave={() => page.children?.length && handleClose()}
+                      color="secondary"
+                    >
+                      {page.name}
+                    </Button>
+                  </Box>
+                ))}
               <Popover
                 anchorEl={anchorEl}
                 open={Boolean(anchorEl)}
@@ -343,7 +353,7 @@ function NavBar(props) {
                   p: 0,
                   mt: 2,
                   "& .MuiList-root": { py: 0, background: "#fff" },
-                  "& .MuiPaper-root": { background: "transparent", },
+                  "& .MuiPaper-root": { background: "transparent" },
                 }}
               >
                 {pages[1].children?.map((item, index) => (
@@ -369,13 +379,15 @@ function NavBar(props) {
               <LogoIcon screen={true} />
             </Box>
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
-              <Button
-                onClick={handleOpenUserMenu}
-                sx={{ p: 0 }}
-                startIcon={<ExpandMore />}
-              >
-                {language}
-              </Button>
+              {!location.pathname?.startsWith("/auth") && (
+                <Button
+                  onClick={handleOpenUserMenu}
+                  sx={{ p: 0 }}
+                  startIcon={<ExpandMore />}
+                >
+                  {language}
+                </Button>
+              )}
 
               <Menu
                 sx={{
@@ -418,6 +430,7 @@ function NavBar(props) {
                   {state.role}
                 </Button>
               ) : (
+                !location.pathname?.startsWith("/auth") &&
                 authpages.map((page) => (
                   <Button
                     size="large"

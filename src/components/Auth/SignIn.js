@@ -24,14 +24,17 @@ const SellerSignIn = () => {
             dispatch({ type: "SIGNIN", payload: "Agent" });
             navigate("/profile");
           }}
+          color="primary"
         >
           Get Started
         </Button>
       </Stack>
-      <Stack sx={{ mt: 1 }}>
+      <Stack sx={{ my: 2 }}>
         <Button>Forgot your password</Button>
       </Stack>
-      <Divider>or</Divider>
+      <Stack sx={{ px: 2 }}>
+        <Divider>or</Divider>
+      </Stack>
       <Stack spacing={1} sx={{ mt: 1 }}>
         <ButtonComponent
           text="Continue with Google"

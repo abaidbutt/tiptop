@@ -36,7 +36,7 @@ const Sixth = () => {
   return (
     <Container maxWidth="md" sx={{ py: 4 }}>
       <Container maxWidth="sm">
-        <Typography variant="h4" align="center">
+        <Typography variant="h4" align="center" gutterBottom>
           Take the first step
         </Typography>
         <Typography variant="h6" align="center" paragraph>
@@ -44,7 +44,7 @@ const Sixth = () => {
         </Typography>
       </Container>
 
-      <Grid container spacing={2}>
+      <Grid container spacing={2} sx={{ my: 4 }}>
         {items?.map((item) => (
           <Post
             key={item.text}
@@ -85,12 +85,7 @@ function Post({ text, src, description }) {
               alt={text}
               sx={{ objectFit: "contain" }}
             />
-            <Typography
-              gutterBottom
-              variant="h6"
-              
-              sx={{ color: "#000" }}
-            >
+            <Typography gutterBottom variant="h6" sx={{ color: "#000" }}>
               {description}
             </Typography>
           </Stack>

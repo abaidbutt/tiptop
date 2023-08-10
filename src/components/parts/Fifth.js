@@ -68,9 +68,7 @@ function Post({ text, src }) {
     <Grid item xs={12} sm={6} md={4}>
       <Stack direction={"row"} alignItems="center" spacing={2}>
         {src}
-        <Typography variant="h6" >
-          {text}
-        </Typography>
+        <Typography variant="h6">{text}</Typography>
       </Stack>
     </Grid>
   );
@@ -105,14 +103,16 @@ function ContentComponent({ video, text1, text2, reverse }) {
                 sx={{
                   whiteSpace: "pre-line",
                   overflowWrap: "break-word",
+                  fontSize: "1.75rem",
                 }}
               >
                 {text1}
               </Typography>
-              <Typography variant="subtitle1">{text2}</Typography>
+              <Typography variant="subtitle1" sx={{ fontSize: "1.15rem" }}>
+                {text2}
+              </Typography>
             </Stack>
           </Grid>
-          
         </Grid>
       </Container>
     </Box>

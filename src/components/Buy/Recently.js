@@ -97,7 +97,7 @@ export default function SimpleSlider() {
   };
   return (
     <Container maxWidth="md">
-      <Typography gutterBottom variant="h4"  sx={{ my: 2 }}>
+      <Typography gutterBottom variant="h4" sx={{ my:2 }}>
         Recently sold
       </Typography>
       <Grid container spacing={2}>
@@ -143,25 +143,25 @@ function MediaCard({ item, ...props }) {
 }
 const cardItems = [
   {
-    src: "https://source.unsplash.com/random",
+    src: "/assets/house_2.jpg",
     title: "Chris Pickering",
     description:
       "We Started working with them in 2011 and they have become a vital part of our digital marketing plan. Whether it is improving SEO ranking, social media, or press release, the team is full of ideas and also has the capabilities to implement them. Despite having no expperience of snow or skiing, they have immersed themselves in our product.",
   },
   {
-    src: "https://source.unsplash.com/random",
+    src: "/assets/house_1.jpg",
     title: "Courtney T.",
     description:
       "Working with Summit Crew we were able to target our exact audience in their exact location and it's been amazing.",
   },
   {
-    src: "https://source.unsplash.com/random",
+    src: "/assets/house_2.jpg",
     title: "I.W.",
     description:
       "They have helped us grow our online presence in our target market.",
   },
   {
-    src: "https://source.unsplash.com/random",
+    src: "/assets/house_1.jpg",
     title: "Andrea M.",
     description:
       "They have exceeded our expectations time and time again. Our only regret is that we hadn't found them sooner.",

@@ -60,12 +60,14 @@ const defaultTheme = createTheme({
     },
     h5: {
       fontFamily: "Uber Move Medium",
+      fontSize: "1.75rem",
     },
     h6: {
       fontFamily: "Uber Move",
     },
     subtitle1: {
       fontFamily: "Uber Move Medium",
+      fontSize: "1.12rem",
     },
     subtitle2: {
       fontFamily: "Uber Move",
@@ -203,6 +205,10 @@ const router = createBrowserRouter([
             element: <Signup />,
           },
           {
+            path: "agent/signup",
+            element: <Signup />,
+          },
+          {
             path: "seller/signup",
             element: <Signup />,
           },
@@ -216,6 +222,10 @@ const router = createBrowserRouter([
           },
           {
             path: "signin",
+            element: <SignIn />,
+          },
+          {
+            path: "agent/signin",
             element: <SignIn />,
           },
           {

@@ -44,15 +44,16 @@ const Hero = () => {
         <Container maxWidth="sm">
           <Typography
             component="h1"
-            variant="h4"
+            variant="h5"
             align="center"
             color="text.primary"
             gutterBottom
+            fontWeight="bold"
           >
             Discover endless possibilities
           </Typography>
           <Typography
-            variant="h5"
+            variant="h6"
             align="center"
             color="text.secondary"
             paragraph

@@ -75,6 +75,7 @@ const SellerSignIn = () => {
             variant="contained"
             fullWidth
             type="submit"
+            color="primary"
             // onClick={() => {
             //   dispatch({ type: "SIGNIN", payload: "Seller" });
             //   navigate("/seller/profile");
@@ -84,11 +85,13 @@ const SellerSignIn = () => {
           </Button>
         </Stack>
       </form>
-      <Stack sx={{ mt: 1 }}>
+      <Stack sx={{ my: 2 }}>
         <Button>Forgot your password</Button>
       </Stack>
-      <Divider>or</Divider>
-      <Stack spacing={1} sx={{ mt: 1 }}>
+      <Stack sx={{ px: 2 }}>
+        <Divider>or</Divider>
+      </Stack>
+      <Stack spacing={1} sx={{ my: 2 }}>
         <ButtonComponent
           text="Continue with Google"
           icon={<Google sx={{ color: "#E34133" }} fontSize="large" />}

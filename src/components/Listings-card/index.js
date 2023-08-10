@@ -17,7 +17,7 @@ import { styled } from "@mui/material";
 let items = [
   {
     text: "Single-Family Home",
-    src: "https://source.unsplash.com/random",
+    src: "/assets/house_1.jpg",
     price: "$430,000",
     crypto: "BTC 21.02",
     location: "Cape Coral, FL",
@@ -25,7 +25,7 @@ let items = [
   },
   {
     text: "Single-Family Home",
-    src: "https://source.unsplash.com/random",
+    src: "/assets/house_2.jpg",
     price: "$430,000",
     crypto: "ETH 292.68",
     location: "Miami, FL",
@@ -33,7 +33,7 @@ let items = [
   },
   {
     text: "NFTs",
-    src: "https://source.unsplash.com/random",
+    src: "/assets/house_1.jpg",
     price: "$430,000",
     crypto: "BTC 20.39",
     location: "Miami, FL",
@@ -41,7 +41,7 @@ let items = [
   },
   {
     text: "NFTs",
-    src: "https://source.unsplash.com/random",
+    src: "/assets/house_2.jpg",
     price: "$430,000",
     crypto: "ETH 292.68",
     location: "Miami, FL",
