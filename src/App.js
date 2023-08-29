@@ -7,12 +7,11 @@ import Fourth from "./components/parts/Fourth";
 import Fifth from "./components/parts/Fifth";
 import Sixth from "./components/parts/Sixth";
 import FAQs from "./components/parts/FAQs";
-
+import { Box } from "@mui/material";
 function App() {
-  
   return (
     <>
-      <>
+      <Box>
         <Hero />
         <Second />
         <Listings />
@@ -22,7 +21,7 @@ function App() {
         <Fifth />
         <Sixth />
         <FAQs />
-      </>
+      </Box>
     </>
   );
 }

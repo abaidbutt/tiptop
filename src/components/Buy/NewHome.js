@@ -49,7 +49,7 @@ const works = [
   {
     img: (
       <CustomAvatar
-        src="/assets/icons/scale2.png"
+        src="/assets/icons/privacy1.png"
         variant="square"
         alt="scale"
       />
@@ -62,7 +62,7 @@ const works = [
 
 const NewHome = () => {
   return (
-    <Container sx={{ py: { md: 5, xs: 3 } }} maxWidth="md">
+    <Container sx={{ py: { md: 5, xs: 3 } }} maxWidth="lg">
       <Container maxWidth="sm" sx={{ my: 5, textAlign: "center" }}>
         <Typography variant="h4" sx={{ my: 4, fontWeight: 700 }}>
           Why buy your new home on TipTop
@@ -90,6 +90,7 @@ function ContentComponent({ works, reverse, img }) {
         data-aos-duration={4000 * 1}
         data-aos-easing="linear"
         data-aos-offset="300"
+        sx={{ px: 10 }}
       >
         <ResponsiveImage src={`/assets/buy/${img}.jpg`} alt={img} />
       </Grid>
@@ -97,10 +98,10 @@ function ContentComponent({ works, reverse, img }) {
         <Stack
           justifyContent={"center"}
           sx={{ maxWidth: { md: 350 } }}
-          spacing={1}
+          spacing={3 / 2}
         >
           {works?.map((item, index) => (
-            <Stack alignItems={"center"} spacing={1 / 2}>
+            <Stack alignItems={"center"} spacing={1 / 5}>
               {item.img}
               <Typography variant="h6" fontWeight="bold">
                 {item.name}

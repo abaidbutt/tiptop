@@ -50,7 +50,7 @@ const CustomAvatar = styled(Avatar)(({ theme }) => ({
 }));
 const Sixth = () => {
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="lg" sx={{ my: 5 }}>
       <Grid container spacing={2}>
         {items?.map((item) => (
           <Post

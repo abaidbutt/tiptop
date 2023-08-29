@@ -363,14 +363,29 @@ function NavBar(props) {
                     to={item.route}
                     onClick={handleClose}
                     sx={{
-                      "&:hover": { border: "2px solid #09FFF9" },
+                      "&:hover": {
+                        "& .MuiBox-root": {
+                          borderBottom: "2px solid aqua",
+                        },
+                      },
                       border: "2px solid #7F7F7F",
-                      px: 5,
                       mb: index === 0 ? 1 / 2 : 0,
                       mt: index === 1 ? 1 / 2 : 0,
+                      pb: 1 / 2,
                     }}
                   >
-                    {item.name}
+                    <Box
+                      sx={{
+                        pr: 5,
+                        fontWeight: "bold",
+                        fontSize: "0.9375rem",
+                        color: "#020202",
+                        pb: 1 / 2,
+                      }}
+                      component="span"
+                    >
+                      {item.name}
+                    </Box>
                   </MenuItem>
                 ))}
               </Popover>

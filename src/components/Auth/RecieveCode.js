@@ -13,7 +13,7 @@ const Auth = () => {
   const navigate = useNavigate();
   const { state } = useContext(Context);
   return (
-    <Box maxWidth="xs" sx={{ px: { md: 10, sm: 5 }, py: 5 }}>
+    <Container maxWidth="xs" sx={{ px: { md: 10, sm: 5 }, py: 5 }}>
       <Typography variant="h6" gutterBottom fontWeight="bold">
         Enter a 4-digit code
         <br /> sent to your email
@@ -70,7 +70,7 @@ const Auth = () => {
         </Button>
         <Button>back</Button>
       </Stack>
-    </Box>
+    </Container>
   );
 };
 

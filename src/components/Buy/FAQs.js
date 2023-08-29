@@ -69,11 +69,11 @@ const FAQs = () => {
   const [expanded, setExpanded] = useState("");
 
   return (
-    <Container maxWidth="xxl" disableGutters sx={{ py: 4, mt:4 }}>
-      <Container maxWidth="md" disableGutters>
+    <Container maxWidth="xxl" disableGutters sx={{ py: 4, mt: 4 }}>
+      <Container maxWidth="lg">
         <Grid container spacing={6}>
           <Grid item xs={12}>
-            <Typography variant="h4" sx={{ m: 2 }} >
+            <Typography variant="h4" sx={{ m: 2 }}>
               Frequently asked questions
             </Typography>
             {rows?.map((item, index) => (
@@ -119,7 +119,9 @@ const FAQs = () => {
                   <Typography variant="subtitle1">{item.name}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography variant="subtitle1">{item.description}</Typography>
+                  <Typography variant="subtitle1">
+                    {item.description}
+                  </Typography>
                 </AccordionDetails>
               </MuiAccordion>
             ))}

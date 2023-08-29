@@ -27,7 +27,7 @@ const works = [
 
 const Choices = () => {
   return (
-    <Container sx={{ py: { md: 5, xs: 3 } }} maxWidth="md">
+    <Container sx={{ py: { md: 5, xs: 3 } }} maxWidth="lg">
       <ContentComponent works={works} img={"design_4"} />
     </Container>
   );
@@ -38,7 +38,7 @@ function ContentComponent({ works, reverse, img }) {
       container
       spacing={2}
       flexWrap="wrap"
-      sx={{ alignItems: "flex-start" }}
+      sx={{ alignItems: "flex-start", my:5 }}
     >
       <Grid item md={6} sm={12} xs={12}>
         <Stack sx={{ my: 1 }} spacing={2}>

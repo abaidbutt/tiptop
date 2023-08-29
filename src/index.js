@@ -60,14 +60,14 @@ const defaultTheme = createTheme({
     },
     h5: {
       fontFamily: "Uber Move Medium",
-      fontSize: "1.75rem",
+      fontSize: "1.755rem",
     },
     h6: {
       fontFamily: "Uber Move",
     },
     subtitle1: {
       fontFamily: "Uber Move Medium",
-      fontSize: "1.12rem",
+      fontSize: "1.15rem",
     },
     subtitle2: {
       fontFamily: "Uber Move",

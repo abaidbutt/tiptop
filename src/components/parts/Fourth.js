@@ -94,7 +94,7 @@ const works = [
 
 const Fourth = () => {
   return (
-    <Container sx={{ py: { md: 5, xs: 3 } }} maxWidth="md">
+    <Container sx={{ py: { md: 5, xs: 3 } }} maxWidth="lg">
       <Container maxWidth="sm" sx={{ my: 5, textAlign: "center" }}>
         <Typography variant="h4" sx={{ my: 4 }}>
           How does it work
@@ -110,23 +110,25 @@ function ContentComponent({ works, reverse, img }) {
       {works?.map((item, index) =>
         index % 2 === 0 ? (
           <TimelineItem key={index}>
-            <TimelineOppositeContent>{item.img}</TimelineOppositeContent>
+            <TimelineOppositeContent sx={{ px: 10 }}>{item.img}</TimelineOppositeContent>
             <TimelineSeparator sx={{ mx: { md: 3, sm: 2, xs: 1 } }}>
               <TimelineDot color="primary" />
               <TimelineConnector sx={{ bgcolor: "primary.main" }} />
             </TimelineSeparator>
-            <TimelineContent>{item.description}</TimelineContent>
+            <TimelineContent sx={{ px: 10 }}>
+              {item.description}
+            </TimelineContent>
           </TimelineItem>
         ) : (
           <TimelineItem key={index}>
-            <TimelineOppositeContent>
+            <TimelineOppositeContent sx={{ px: 10 }}>
               {item.description}
             </TimelineOppositeContent>
             <TimelineSeparator sx={{ mx: { md: 3, sm: 2, xs: 1 } }}>
               <TimelineDot color="primary" />
               <TimelineConnector sx={{ bgcolor: "primary.main" }} />
             </TimelineSeparator>
-            <TimelineContent>{item.img}</TimelineContent>
+            <TimelineContent sx={{ px: 10 }}>{item.img}</TimelineContent>
           </TimelineItem>
         )
       )}

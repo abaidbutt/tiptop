@@ -85,10 +85,10 @@ const SellerSignIn = () => {
           </Button>
         </Stack>
       </form>
-      <Stack sx={{ my: 2 }}>
+      <Stack sx={{ my: 3/2 }}>
         <Button>Forgot your password</Button>
       </Stack>
-      <Stack sx={{ px: 2 }}>
+      <Stack sx={{ px: 8 }}>
         <Divider>or</Divider>
       </Stack>
       <Stack spacing={1} sx={{ my: 2 }}>

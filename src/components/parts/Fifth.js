@@ -84,7 +84,7 @@ function ContentComponent({ video, text1, text2, reverse }) {
           direction={reverse ? "row-reverse" : "row"}
           sx={{ alignItems: "center" }}
         >
-          <Grid item xs={12} sm={12} md={6}>
+          <Grid item xs={12} sm={12} md={6} sx={{ px: 5 }}>
             <video
               autoPlay
               muted
@@ -94,8 +94,8 @@ function ContentComponent({ video, text1, text2, reverse }) {
               <source src={`/assets/${video}.mp4`} type="video/mp4" />
             </video>
           </Grid>
-          <Grid item md={4} sm={12} xs={12}>
-            <Stack spacing={2}>
+          <Grid item md={6} sm={12} xs={12}>
+            <Stack spacing={2} sx={{ maxWidth: { md: 350 } }}>
               <Typography
                 variant="h5"
                 gutterBottom

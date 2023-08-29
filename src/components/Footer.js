@@ -14,6 +14,7 @@ const Footer = () => {
   return (
     <Container maxWidth="xxl" disableGutters component="footer">
       <Container maxWidth="sm" sx={{ py: 8 }}>
+        
         <Stack spacing={2} alignItems="center">
           <Typography variant="h4" gutterBottom align="center">
             {location.pathname === "/buy"

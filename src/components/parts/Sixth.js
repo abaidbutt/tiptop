@@ -34,7 +34,7 @@ let items = [
 
 const Sixth = () => {
   return (
-    <Container maxWidth="md" sx={{ py: 4 }}>
+    <Container maxWidth="lg" sx={{ py: 4 }}>
       <Container maxWidth="sm">
         <Typography variant="h4" align="center" gutterBottom>
           Take the first step
@@ -72,20 +72,24 @@ function Post({ text, src, description }) {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          // gap: 2,
+          gap: 1,
         }}
       >
         <CardContent>
           <Stack spacing={2}>
             <CardMedia
               component="img"
-              height="160"
-              width="40"
+              height="220"
+              width="140"
               image={src}
               alt={text}
               sx={{ objectFit: "contain" }}
             />
-            <Typography gutterBottom variant="h6" sx={{ color: "#000" }}>
+            <Typography
+              gutterBottom
+              variant="h5"
+              sx={{ color: "#000", fontWeight: "normal", px: 2 }}
+            >
               {description}
             </Typography>
           </Stack>
