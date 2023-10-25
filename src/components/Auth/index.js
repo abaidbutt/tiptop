@@ -14,38 +14,7 @@ import { styled } from "@mui/material";
 
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Context } from "../../store";
-const StyledToggleButton = styled(ToggleButton)({
-  "&.MuiToggleButton-root": {
-    "&.Mui-selected": {
-      backgroundColor: "transparent",
-      borderBottom: "2px solid aqua",
-      color: "inherit",
-    },
-  },
-});
 
-const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
-  "& .MuiToggleButtonGroup-grouped": {
-    margin: theme.spacing(0.5),
-    gap: theme.spacing(1.5),
-    border: 0,
-    "&.Mui-disabled": {
-      border: 0,
-    },
-    "&:not(:first-of-type)": {
-      // borderRadius: theme.shape.borderRadius,
-      borderRadius: 0,
-    },
-    // "&:first-of-type": {
-    //   borderRadius: 0,
-    //   borderRight: "1px solid red",
-    // },
-    "&:not(:last-of-type)": {
-      borderRadius: 0,
-      borderRight: "1px solid #595959",
-    },
-  },
-}));
 const Auth = () => {
   const location = useLocation();
   const { dispatch, state } = useContext(Context);
@@ -199,7 +168,7 @@ const Auth = () => {
             </Button>
           </Stack>
         )}
-       
+
         <Box sx={{ mt: 2 }}>
           <Outlet />
         </Box>
