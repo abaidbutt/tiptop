@@ -32,7 +32,13 @@ const SellerSignIn = () => {
         </Button>
       </Stack>
       <Stack sx={{ px: 8 }}>
-        <Button>Forgot your password</Button>
+        <Button
+          onClick={() => {
+            navigate("/auth/forgot");
+          }}
+        >
+          Forgot your password
+        </Button>
         <Divider>or</Divider>
       </Stack>
       <Stack spacing={1} sx={{ mt: 1 }}>

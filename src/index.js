@@ -8,7 +8,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { CssBaseline } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import NavBar from "./components/NavBar";
 import Buy from "./components/Buy";
 import RecieveCode from "./components/Auth/RecieveCode";
@@ -38,82 +37,10 @@ import Verification from "./components/Auth/Verification";
 import SignupDetail from "./components/Auth/SignUpDetail";
 import Signup from "./components/Auth/Signup";
 import MoreDetails from "./components/Seller/MoreDetails";
-const defaultTheme = createTheme({
-  palette: {
-    primary: { main: "#09FFF9" },
-    secondary: { main: "#020202" },
-  },
-  typography: {
-    h1: {
-      fontFamily: "Uber Move Bold",
-    },
-    h2: {
-      fontFamily: "Uber Move Bold",
-    },
-    h3: {
-      fontFamily: "Uber Move Bold",
-      fontSize: "2.375rem",
-    },
-    h4: {
-      fontFamily: "Uber Move Bold",
-      fontSize: "1.875rem",
-    },
-    h5: {
-      fontFamily: "Uber Move Medium",
-      fontSize: "1.755rem",
-    },
-    h6: {
-      fontFamily: "Uber Move",
-    },
-    subtitle1: {
-      fontFamily: "Uber Move Medium",
-      fontSize: "1.15rem",
-    },
-    subtitle2: {
-      fontFamily: "Uber Move",
-    },
-    body1: {
-      fontFamily: "Uber Move Medium",
-    },
-    body2: {
-      fontFamily: "Uber Move",
-    },
-    caption: {
-      fontFamily: "Uber Move Medium",
-    },
-    overline: {
-      fontFamily: "Uber Move Medium",
-    },
-    inherit: {
-      fontFamily: "Uber Move Medium",
-    },
-    button: {
-      fontFamily: "Uber Move Bold",
-      textTransform: "capitalize",
-      borderRadius: 2,
-      // fontWeight: "bold",
-    },
-  },
-  components: {
-    // Name of the component
-    MuiButton: {
-      defaultProps: {
-        disableFocusRipple: true,
-        disableTouchRipple: true,
-        disableElevation: true,
-        disableRipple: true,
-        color: "inherit",
-      },
-      styleOverrides: {
-        root: {},
-        // "&:hover": {
-        //   backgroundColor: "red",
-        // },
-      },
-    },
-    MuiButtonBase: {},
-  },
-});
+import { ThemeProvider } from "@mui/material/styles";
+import { defaultTheme } from "./components/theme";
+import Contact from "./components/Contact";
+import Home from "./components/Home";
 const router = createBrowserRouter([
   {
     path: "",
@@ -122,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <App />,
+      },
+      {
+        path: "/mortgage",
+        element: <Home />,
       },
       {
         path: "/buy",
@@ -193,11 +124,19 @@ const router = createBrowserRouter([
         element: <MoreDetails />,
       },
       {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
         path: "/auth",
         element: <Auth />,
         children: [
           {
             path: "verify",
+            element: <RecieveCode />,
+          },
+          {
+            path: "forgot",
             element: <RecieveCode />,
           },
           {

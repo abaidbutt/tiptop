@@ -117,7 +117,7 @@ function ChatApp() {
         </Typography>
       </Stack>
 
-      <Box sx={{ display: "flex", height: "100vh" }}>
+      <Box sx={{ display: "flex", height: "90vh", border:"1px solid #e7e7e7" }}>
         {/* Left Side */}
         <Box sx={{ width: 300, borderRight: 1, borderColor: "divider" }}>
           {/* Top Section */}

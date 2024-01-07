@@ -40,7 +40,7 @@ const pages = [
 const authpages = [
   { name: "Log in", route: "/auth/signin" },
   { name: "Sign up", route: "/auth/signup" },
-  { name: "Exchange", route: "exchange" },
+  { name: "Contact", route: "contact" },
 ];
 const settings = [
   { name: "English", value: "EN" },
